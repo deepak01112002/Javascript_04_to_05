@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #loginDiv{
+            display: none;
+        }
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+     <div id="signupDiv">
+        <h1>Signup</h1>
+        <form id="signupForm">
+            <input type="text" placeholder="Username" id="username">
+            <p id="wrongUsername" ></p>
+            <input type="text" placeholder="Email ID" id="emailID">
+            <p id="wrongEmail"></p>
+            <input type="text" placeholder="Password" id="password">
+            <p id="wrongPassword"></p>
+            <input type="submit">
+        </form>
+        <p id="goToLogin">Already an account ? Login</p>
+     </div>
+     <div id="loginDiv">
+         <h1>Login</h1>
+         <form id="loginForm">
+            <input type="text" placeholder="Email ID" id="loginemailID">
+            <input type="text" placeholder="Password" id="loginpassword">
+            <input type="submit">
+        </form>
+         <p id="goToSignup">Create an account !</p>
+     </div>
+    <script src="script.js"></script>
+</body>
+</html>

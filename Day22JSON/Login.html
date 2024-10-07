@@ -6,10 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form id="login">
+         <input type="text" placeholder="Email" id="email">
+         <input type="text" placeholder="Password" id="password">
+         <input type="submit">
+    </form>
 </body>
 <script>
-     let arr = JSON.parse(localStorage.getItem("data"))
-     console.log(arr)
+      let arr = JSON.parse(localStorage.getItem("data"))
+
+      document.getElementById("login").addEventListener("submit",(deepak)=>{
+            deepak.preventDefault()
+            let loginEmail = document.getElementById("email").value 
+            let loginPassword = document.getElementById("password").value
+            let data = arr.filter((el)=>{
+                 if(el.email == loginEmail && el.password == loginPassword){
+                    return el;
+                 }
+            })
+            if(data.length > 0){
+                alert("Login Successfull")
+            }else{
+                alert("Login Unsuccesfull")
+            }
+      })
 </script>
 </html>

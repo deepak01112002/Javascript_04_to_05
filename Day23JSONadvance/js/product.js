@@ -14,7 +14,7 @@ function view(){
              </div>
              <div>
                 <p>${el.title} - ${el.price}</p>
-                 <button>Edit</button>
+                 <button onclick="EditData(${index})">Edit</button>
                  <button onclick="DeleteData(${index})">Delete</button>
              </div>
         </div>`
@@ -22,6 +22,12 @@ function view(){
 }
 
 function DeleteData(index){
-   
+    product.splice(index,1)
+    localStorage.setItem("products",JSON.stringify(product))
+    document.getElementById("box").innerHTML = view()
 }
 
+function EditData(index){
+    localStorage.setItem("editIndex",index)
+    window.location.href = "edit.html"
+}
